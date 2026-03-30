@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="top-bar">
+        <h1>Secure Notes</h1>
+        <button onclick="toggleDark()">🌙</button>
+    </div>
+
+    <input id="search" placeholder="🔍 Search..." oninput="searchNotes()">
+
+    <input id="title" placeholder="Title">
+    <input id="content" placeholder="Content">
+    <button onclick="addNote()"> Add Note</button>
+
+    <ul id="list"></ul>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

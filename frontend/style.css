@@ -1,0 +1,130 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);  
+    margin: 0;
+    padding: 40px;
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #0d1117;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 18px;
+    color: #1f2937;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+body.dark .container {
+    background: #161b22;
+    color: #e6edf3;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    outline: none;
+}
+
+body.dark input {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: white;
+}
+
+button {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 3px;
+    background: #22c55e; 
+    color: white;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+li {
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.25s;
+    border: 1px solid #e5e7eb;
+
+    overflow: hidden;
+    word-break: break-word;
+}
+
+body.dark li {
+    background: #21262d;
+    border: 1px solid #30363d;
+}
+
+li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+li div {
+    width: 100%;
+    overflow: hidden;
+}
+
+li b {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+li small {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+
+    max-height: 110px;
+    overflow-y: auto;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
