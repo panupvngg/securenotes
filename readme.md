@@ -44,8 +44,6 @@ SECRET_TOKEN=mysecrettoken
 
 ---
 
-### ⚠️ สำคัญมาก
-
 ค่าต้องตรงกับฝั่ง Frontend (`script.js`):
 
 ```js
