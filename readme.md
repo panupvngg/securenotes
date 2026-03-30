@@ -1,7 +1,5 @@
 # 🔐 Secure Notes
 
-เว็บแอปสำหรับบันทึกโน้ตแบบง่าย พร้อมระบบ Backend + Frontend แยกกัน และมีการป้องกันด้วย Token
-
 ---
 
 ## 📁 Project Structure
