@@ -1,46 +1,139 @@
-Secure Notes 
+# 🔐 Secure Notes
 
+เว็บแอปสำหรับบันทึกโน้ตแบบง่าย พร้อมระบบ Backend + Frontend แยกกัน และมีการป้องกันด้วย Token
 
+---
 
-backend
-    ├─ server.js          
-    ├─ package.json
-    ├─ package-lock.json
-    ├─ .env
-frontend              
-    ├─ index.html         
-    ├─ script.js
-    └─ style.css
+## 📁 Project Structure
 
+```
+Secure Notes
+│
+├── backend
+│   ├── server.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .env
+│
+└── frontend
+    ├── index.html
+    ├── script.js
+    └── style.css
+```
 
+---
 
-เริ่มต้นใช้งาน (Quick Start)
-ติดตั้งแพ็กเกจ
+## 🚀 Quick Start
+
+### 1. ติดตั้งแพ็กเกจ (Backend)
+
+```bash
 npm install
-สร้างไฟล์ .env ในรูทโปรเจกต์
-env
+```
 
+---
 
+### 2. สร้างไฟล์ `.env`
+
+สร้างไฟล์ `.env` ในโฟลเดอร์ `backend` แล้วใส่ค่า:
+
+```env
 PORT=3000
 SECRET_TOKEN=mysecrettoken
-ค่าด้านบนต้องสอดคล้องกับฝั่ง frontend:
-script.js กำหนด API เป็น http://localhost:3000/api/notes
-และ TOKEN = "mysecrettoken"
-หากเปลี่ยน PORT หรือ TOKEN ต้องแก้ให้ตรงกันทั้งสองฝั่ง
-รันเซิร์ฟเวอร์
-node server.js
+```
 
-npm start
-เปิด frontend
-ดับเบิลคลิกเปิดไฟล์ index.html ในเบราเซอร์ได้เลย
+---
 
+### ⚠️ สำคัญมาก
 
+ค่าต้องตรงกับฝั่ง Frontend (`script.js`):
+
+```js
 const API = "http://localhost:3000/api/notes";
 const TOKEN = "mysecrettoken";
-ฟังก์ชันหลัก:
-loadNotes(): โหลดโน้ตทั้งหมด
-addNote(): เพิ่มโน้ต (ต้องส่ง Authorization)
-deleteNote(id): ลบโน้ต (ต้องส่ง Authorization)
-editNote(id): แก้ไขโดยลบแล้วเพิ่มใหม่
-searchNotes(): ค้นหาจาก title หรือ content
-toggleDark(): สลับโหมดมืด/สว่าง และจำค่าไว้ใน localStorage
+```
+
+> ❗ หากเปลี่ยน `PORT` หรือ `TOKEN` ต้องแก้ให้ตรงกันทั้ง **Backend และ Frontend**
+
+---
+
+### 3. รันเซิร์ฟเวอร์
+
+```bash
+node server.js
+```
+
+หรือ
+
+```bash
+npm start
+```
+
+---
+
+### 4. เปิด Frontend
+
+เปิดไฟล์:
+
+```
+frontend/index.html
+```
+
+โดยการดับเบิลคลิก หรือเปิดผ่าน Browser
+
+---
+
+## ⚙️ ฟังก์ชันหลัก
+
+### 📥 `loadNotes()`
+
+โหลดโน้ตทั้งหมดจาก Backend
+
+---
+
+### ➕ `addNote()`
+
+เพิ่มโน้ตใหม่
+
+> ต้องส่ง `Authorization Token`
+
+---
+
+### ❌ `deleteNote(id)`
+
+ลบโน้ตตาม ID
+
+> ต้องส่ง `Authorization Token`
+
+---
+
+### ✏️ `editNote(id)`
+
+แก้ไขโน้ต
+
+> ใช้วิธี "ลบแล้วเพิ่มใหม่"
+
+---
+
+### 🔍 `searchNotes()`
+
+ค้นหาโน้ตจาก:
+
+* Title
+* Content
+
+---
+🌙 toggleDark()
+
+สลับโหมด:
+
+Light Mode
+Dark Mode
+
+และจะบันทึกค่าลง localStorage
+
+
+
+
+
+
